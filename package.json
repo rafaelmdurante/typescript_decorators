@@ -1,0 +1,23 @@
+{
+  "name": "typescript_decorators",
+  "version": "1.0.0",
+  "description": "project to understand basics of typescript decorators",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "compile": "tsc",
+    "watch": "tsc -w",
+    "serve": "lite-server --baseDir=app",
+    "start": "npm run watch | npm run serve"
+  },
+  "keywords": [
+    "typescript",
+    "decorator"
+  ],
+  "author": "rafael miranda",
+  "license": "ISC",
+  "dependencies": {
+    "lite-server": "^2.5.4",
+    "typescript": "^3.7.4"
+  }
+}
