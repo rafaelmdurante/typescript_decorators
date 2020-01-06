@@ -1,25 +1,31 @@
-export function Throttle(milliseconds = 500) {
+// TODO: Set the default time to be 500 milliseconds
+export function Throttle(milliseconds) {
 
+  // TODO: Can you remember the three arguments?
   return function(
-    target: any, // instance where decorator was applied
-    propertyKey: string,  // name of method
-    descriptor: PropertyDescriptor // everything from method
+    : any, // instance where decorator was applied
+    : string,  // name of method
+    : PropertyDescriptor // everything from the method
   ) {
-    // copy of the original method
-    const source = descriptor.value;
+    
+    // TODO: Make a copy of the original method
+
+    // Set a variable to be the timer
     let timer = 0;
-    // changes the original method
-    descriptor.value = function(...args: any[]) {
-      // TypeScript detects there is an event and prevent default behaviour
+    
+    // TODO: Changes original method
+    /* Change this line with the function declaration */ {
+      // If there is an event in this function
       if (event) {
-        event.preventDefault();
+        // TODO: Prevent its default behaviour
       }
-      // clear timer to prevent the function to be called over and over
+      // Clear timer to prevent the function to be called
       clearInterval(timer);
-      // set timer and execute method when finished
+      // TODO: Set the timer to run the original method after certain amount of time
+      // set timer and execute the original method when it's finished
       timer = setTimeout(() => source.apply(this, args), milliseconds);
     }
-    
+
     return descriptor;
   }
 }
